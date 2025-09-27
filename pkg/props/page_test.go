@@ -5,12 +5,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/johnfercher/maroto/v2/internal/fixture"
-	"github.com/johnfercher/maroto/v2/pkg/consts/align"
-	"github.com/johnfercher/maroto/v2/pkg/consts/breakline"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontfamily"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontstyle"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/internal/fixture"
+	"github.com/vanclief/maroto/v2/pkg/consts/align"
+	"github.com/vanclief/maroto/v2/pkg/consts/breakline"
+	"github.com/vanclief/maroto/v2/pkg/consts/fontfamily"
+	"github.com/vanclief/maroto/v2/pkg/consts/fontstyle"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 func TestPlace_IsValid(t *testing.T) {

@@ -1,9 +1,9 @@
 package text_test
 
 import (
-	"github.com/johnfercher/maroto/v2"
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
+	"github.com/vanclief/maroto/v2"
+	"github.com/vanclief/maroto/v2/pkg/components/col"
+	"github.com/vanclief/maroto/v2/pkg/components/text"
 )
 
 // ExampleNew demonstrates how to create a text component.

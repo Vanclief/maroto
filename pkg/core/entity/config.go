@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/johnfercher/maroto/v2/pkg/consts/generation"
-	"github.com/johnfercher/maroto/v2/pkg/consts/provider"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/pkg/consts/generation"
+	"github.com/vanclief/maroto/v2/pkg/consts/provider"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 // Config is the configuration of a maroto instance.

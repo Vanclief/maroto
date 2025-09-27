@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf"
+	"github.com/vanclief/maroto/v2/internal/providers/gofpdf"
 
 	"github.com/stretchr/testify/assert"
 )

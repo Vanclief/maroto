@@ -6,13 +6,13 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
-	"github.com/johnfercher/maroto/v2/pkg/consts/align"
-	"github.com/johnfercher/maroto/v2/pkg/consts/breakline"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontfamily"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
+	"github.com/vanclief/maroto/v2/pkg/consts/align"
+	"github.com/vanclief/maroto/v2/pkg/consts/breakline"
+	"github.com/vanclief/maroto/v2/pkg/consts/fontfamily"
+	"github.com/vanclief/maroto/v2/pkg/core"
+	"github.com/vanclief/maroto/v2/pkg/core/entity"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 type text struct {

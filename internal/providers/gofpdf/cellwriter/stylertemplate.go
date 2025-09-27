@@ -1,9 +1,9 @@
 package cellwriter
 
 import (
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
+	"github.com/vanclief/maroto/v2/pkg/core/entity"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 type stylerTemplate struct {

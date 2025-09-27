@@ -3,14 +3,14 @@ package main
 import (
 	"log"
 
-	"github.com/johnfercher/maroto/v2/pkg/core"
+	"github.com/vanclief/maroto/v2/pkg/core"
 
-	"github.com/johnfercher/maroto/v2"
+	"github.com/vanclief/maroto/v2"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
+	"github.com/vanclief/maroto/v2/pkg/components/text"
 
-	"github.com/johnfercher/maroto/v2/pkg/config"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/pkg/config"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 func main() {

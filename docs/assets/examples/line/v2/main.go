@@ -3,16 +3,16 @@ package main
 import (
 	"log"
 
-	"github.com/johnfercher/maroto/v2/pkg/core"
+	"github.com/vanclief/maroto/v2/pkg/core"
 
-	"github.com/johnfercher/maroto/v2"
+	"github.com/vanclief/maroto/v2"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/line"
-	"github.com/johnfercher/maroto/v2/pkg/consts/linestyle"
-	"github.com/johnfercher/maroto/v2/pkg/consts/orientation"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/pkg/components/line"
+	"github.com/vanclief/maroto/v2/pkg/consts/linestyle"
+	"github.com/vanclief/maroto/v2/pkg/consts/orientation"
+	"github.com/vanclief/maroto/v2/pkg/props"
 
-	"github.com/johnfercher/maroto/v2/pkg/config"
+	"github.com/vanclief/maroto/v2/pkg/config"
 )
 
 func main() {

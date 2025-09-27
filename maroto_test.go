@@ -6,17 +6,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/code"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
+	"github.com/vanclief/maroto/v2/pkg/components/code"
+	"github.com/vanclief/maroto/v2/pkg/components/text"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/page"
-	"github.com/johnfercher/maroto/v2/pkg/components/row"
-	"github.com/johnfercher/maroto/v2/pkg/config"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/test"
+	"github.com/vanclief/maroto/v2/pkg/components/col"
+	"github.com/vanclief/maroto/v2/pkg/components/page"
+	"github.com/vanclief/maroto/v2/pkg/components/row"
+	"github.com/vanclief/maroto/v2/pkg/config"
+	"github.com/vanclief/maroto/v2/pkg/core"
+	"github.com/vanclief/maroto/v2/pkg/test"
 
-	"github.com/johnfercher/maroto/v2"
+	"github.com/vanclief/maroto/v2"
 
 	"github.com/stretchr/testify/assert"
 )

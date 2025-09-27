@@ -1,7 +1,7 @@
 package cellwriter
 
 import (
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
+	"github.com/vanclief/maroto/v2/internal/providers/gofpdf/gofpdfwrapper"
 )
 
 type CellWriterBuilder struct{}

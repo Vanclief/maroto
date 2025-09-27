@@ -3,10 +3,10 @@
 package mocks
 
 import (
-	cache "github.com/johnfercher/maroto/v2/internal/cache"
-	entity "github.com/johnfercher/maroto/v2/pkg/core/entity"
+	cache "github.com/vanclief/maroto/v2/internal/cache"
+	entity "github.com/vanclief/maroto/v2/pkg/core/entity"
 
-	gofpdf "github.com/johnfercher/maroto/v2/internal/providers/gofpdf"
+	gofpdf "github.com/vanclief/maroto/v2/internal/providers/gofpdf"
 
 	mock "github.com/stretchr/testify/mock"
 )

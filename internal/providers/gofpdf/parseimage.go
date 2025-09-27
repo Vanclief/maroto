@@ -3,8 +3,8 @@ package gofpdf
 import (
 	"errors"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/vanclief/maroto/v2/pkg/consts/extension"
+	"github.com/vanclief/maroto/v2/pkg/core/entity"
 )
 
 func FromBytes(bytes []byte, ext extension.Type) (*entity.Image, error) {

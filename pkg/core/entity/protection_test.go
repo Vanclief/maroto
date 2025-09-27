@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/protection"
+	"github.com/vanclief/maroto/v2/pkg/consts/protection"
 )
 
 func TestProtection_AppendMap(t *testing.T) {

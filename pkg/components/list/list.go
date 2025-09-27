@@ -4,7 +4,7 @@ package list
 import (
 	"errors"
 
-	"github.com/johnfercher/maroto/v2/pkg/core"
+	"github.com/vanclief/maroto/v2/pkg/core"
 )
 
 // Listable is the main abstraction of a listable item in a TableList.

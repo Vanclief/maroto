@@ -4,9 +4,9 @@ package page
 import (
 	"github.com/johnfercher/go-tree/node"
 
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/pkg/core"
+	"github.com/vanclief/maroto/v2/pkg/core/entity"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 type Page struct {

@@ -5,21 +5,21 @@ import (
 	"log"
 	"os"
 
-	"github.com/johnfercher/maroto/v2"
+	"github.com/vanclief/maroto/v2"
 
-	"github.com/johnfercher/maroto/v2/pkg/components/code"
-	"github.com/johnfercher/maroto/v2/pkg/components/col"
-	"github.com/johnfercher/maroto/v2/pkg/components/image"
-	"github.com/johnfercher/maroto/v2/pkg/components/row"
-	"github.com/johnfercher/maroto/v2/pkg/components/signature"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
+	"github.com/vanclief/maroto/v2/pkg/components/code"
+	"github.com/vanclief/maroto/v2/pkg/components/col"
+	"github.com/vanclief/maroto/v2/pkg/components/image"
+	"github.com/vanclief/maroto/v2/pkg/components/row"
+	"github.com/vanclief/maroto/v2/pkg/components/signature"
+	"github.com/vanclief/maroto/v2/pkg/components/text"
 
-	"github.com/johnfercher/maroto/v2/pkg/consts/align"
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
+	"github.com/vanclief/maroto/v2/pkg/consts/align"
+	"github.com/vanclief/maroto/v2/pkg/consts/extension"
 
-	"github.com/johnfercher/maroto/v2/pkg/config"
-	"github.com/johnfercher/maroto/v2/pkg/core"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/pkg/config"
+	"github.com/vanclief/maroto/v2/pkg/core"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 var dummyText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac condimentum sem."
@@ -147,8 +147,8 @@ func buildFooter() []core.Row {
 	return []core.Row{
 		row.New(10).Add(
 			text.NewCol(2, "Site: https://maroto.io/"),
-			text.NewCol(5, "Discussions: https://github.com/johnfercher/maroto/issues/257"),
-			text.NewCol(5, "Branch: https://github.com/johnfercher/maroto/tree/v2"),
+			text.NewCol(5, "Discussions: https://github.com/vanclief/maroto/issues/257"),
+			text.NewCol(5, "Branch: https://github.com/vanclief/maroto/tree/v2"),
 		),
 	}
 }

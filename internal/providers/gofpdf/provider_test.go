@@ -7,19 +7,19 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/johnfercher/maroto/v2/pkg/consts/barcode"
+	"github.com/vanclief/maroto/v2/pkg/consts/barcode"
 
-	"github.com/johnfercher/maroto/v2/internal/fixture"
-	"github.com/johnfercher/maroto/v2/internal/merror"
-	"github.com/johnfercher/maroto/v2/mocks"
-	"github.com/johnfercher/maroto/v2/pkg/consts/extension"
-	"github.com/johnfercher/maroto/v2/pkg/consts/protection"
+	"github.com/vanclief/maroto/v2/internal/fixture"
+	"github.com/vanclief/maroto/v2/internal/merror"
+	"github.com/vanclief/maroto/v2/mocks"
+	"github.com/vanclief/maroto/v2/pkg/consts/extension"
+	"github.com/vanclief/maroto/v2/pkg/consts/protection"
 	"github.com/stretchr/testify/mock"
 
-	"github.com/johnfercher/maroto/v2/internal/providers/gofpdf"
+	"github.com/vanclief/maroto/v2/internal/providers/gofpdf"
 	gpdf "github.com/jung-kurt/gofpdf"
 
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/vanclief/maroto/v2/pkg/core/entity"
 	"github.com/stretchr/testify/assert"
 )
 

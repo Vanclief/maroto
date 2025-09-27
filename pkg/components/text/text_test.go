@@ -3,12 +3,12 @@ package text_test
 import (
 	"testing"
 
-	"github.com/johnfercher/maroto/v2/internal/fixture"
-	"github.com/johnfercher/maroto/v2/mocks"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
-	"github.com/johnfercher/maroto/v2/pkg/props"
-	"github.com/johnfercher/maroto/v2/pkg/test"
+	"github.com/vanclief/maroto/v2/internal/fixture"
+	"github.com/vanclief/maroto/v2/mocks"
+	"github.com/vanclief/maroto/v2/pkg/components/text"
+	"github.com/vanclief/maroto/v2/pkg/core/entity"
+	"github.com/vanclief/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/pkg/test"
 	"github.com/stretchr/testify/assert"
 )
 

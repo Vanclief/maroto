@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/johnfercher/maroto/v2"
-	"github.com/johnfercher/maroto/v2/pkg/components/text"
-	"github.com/johnfercher/maroto/v2/pkg/merge"
+	"github.com/vanclief/maroto/v2"
+	"github.com/vanclief/maroto/v2/pkg/components/text"
+	"github.com/vanclief/maroto/v2/pkg/merge"
 )
 
 func TestBytes(t *testing.T) {

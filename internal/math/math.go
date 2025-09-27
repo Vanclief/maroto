@@ -1,7 +1,7 @@
 package math
 
 import (
-	"github.com/johnfercher/maroto/v2/pkg/core/entity"
+	"github.com/vanclief/maroto/v2/pkg/core/entity"
 )
 
 type math struct{}

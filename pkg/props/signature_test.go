@@ -5,12 +5,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/johnfercher/maroto/v2/internal/fixture"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontfamily"
-	"github.com/johnfercher/maroto/v2/pkg/consts/fontstyle"
-	"github.com/johnfercher/maroto/v2/pkg/consts/linestyle"
-	"github.com/johnfercher/maroto/v2/pkg/consts/orientation"
-	"github.com/johnfercher/maroto/v2/pkg/props"
+	"github.com/vanclief/maroto/v2/internal/fixture"
+	"github.com/vanclief/maroto/v2/pkg/consts/fontfamily"
+	"github.com/vanclief/maroto/v2/pkg/consts/fontstyle"
+	"github.com/vanclief/maroto/v2/pkg/consts/linestyle"
+	"github.com/vanclief/maroto/v2/pkg/consts/orientation"
+	"github.com/vanclief/maroto/v2/pkg/props"
 )
 
 func TestSignature_ToMap(t *testing.T) {
