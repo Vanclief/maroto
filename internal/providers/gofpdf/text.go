@@ -80,9 +80,9 @@ func (s *text) Add(text string, cell *entity.Cell, textProp *props.Text) {
 
 	var lines []string
 
-	if textProp.BreakLineStrategy == breakline.EmptySpaceStrategy {
+	if textProp.BreakLineStrategy == breakline.EmptySpaceStrategy || textProp.BreakLineStrategy == breakline.BreakWordStrategy {
 		words := strings.Split(unicodeText, " ")
-		lines = s.getLinesBreakingLineFromSpace(words, width)
+		lines = s.getLinesBreakingLineFromSpace(words, width, textProp.BreakLineStrategy == breakline.BreakWordStrategy)
 	} else {
 		lines = s.getLinesBreakingLineWithDash(unicodeText, width)
 	}
@@ -108,11 +108,11 @@ func (s *text) GetLinesQuantity(text string, textProp *props.Text, colWidth floa
 	if textProp.BreakLineStrategy == breakline.DashStrategy {
 		return len(s.getLinesBreakingLineWithDash(text, colWidth))
 	} else {
-		return len(s.getLinesBreakingLineFromSpace(strings.Split(textTranslated, " "), colWidth))
+		return len(s.getLinesBreakingLineFromSpace(strings.Split(textTranslated, " "), colWidth, textProp.BreakLineStrategy == breakline.BreakWordStrategy))
 	}
 }
 
-func (s *text) getLinesBreakingLineFromSpace(words []string, colWidth float64) []string {
+func (s *text) getLinesBreakingLineFromSpace(words []string, colWidth float64, breakWords bool) []string {
 	currentlySize := 0.0
 	lines := []string{}
 
@@ -136,6 +136,11 @@ func (s *text) getLinesBreakingLineFromSpace(words []string, colWidth float64) [
 			}
 			lines[len(lines)-1] += separator + word
 			currentlySize += width
+		} else if breakWords {
+			for _, piece := range s.breakWord(word, colWidth) {
+				lines = append(lines, piece)
+				currentlySize = s.pdf.GetStringWidth(piece)
+			}
 		} else {
 			lines = append(lines, word)
 			currentlySize = s.pdf.GetStringWidth(word)
@@ -144,6 +149,29 @@ func (s *text) getLinesBreakingLineFromSpace(words []string, colWidth float64) [
 	}
 
 	return lines
+}
+
+// breakWord returns the word whole when it fits the column, or else pieces as wide as the column
+// allows, each at least one character long. It slices the word at character boundaries without
+// re-encoding, so text already translated to a single-byte encoding keeps its bytes.
+func (s *text) breakWord(word string, colWidth float64) []string {
+	if s.pdf.GetStringWidth(word) <= colWidth {
+		return []string{word}
+	}
+
+	pieces := []string{}
+	start := 0
+	for i := 0; i < len(word); {
+		_, size := utf8.DecodeRuneInString(word[i:])
+		end := i + size
+		if i > start && s.pdf.GetStringWidth(word[start:end]) > colWidth {
+			pieces = append(pieces, word[start:i])
+			start = i
+		}
+		i = end
+	}
+
+	return append(pieces, word[start:])
 }
 
 func (s *text) getLinesBreakingLineWithDash(words string, colWidth float64) []string {

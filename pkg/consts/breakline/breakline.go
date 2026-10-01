@@ -13,4 +13,7 @@ const (
 	// This strategy is useful for languages that don't use space between words.
 	// To divide the lines, is applied a dash in the end of the line.
 	DashStrategy Strategy = "dash_strategy"
+	// BreakWordStrategy breaks lines at spaces like EmptySpaceStrategy, and cuts a word wider
+	// than the line where it stops fitting, without a dash, so no word runs past its column.
+	BreakWordStrategy Strategy = "break_word_strategy"
 )

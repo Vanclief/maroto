@@ -29,6 +29,21 @@
 					]
 				},
 				{
+					"value": 0.9999,
+					"type": "row",
+					"nodes": [
+						{
+							"value": 12,
+							"type": "col"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "page",
+			"nodes": [
+				{
 					"value": 1,
 					"type": "row",
 					"nodes": [
@@ -42,7 +57,7 @@
 					]
 				},
 				{
-					"value": 0,
+					"value": 18.9999,
 					"type": "row",
 					"nodes": [
 						{

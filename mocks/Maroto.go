@@ -286,6 +286,124 @@ func (_c *Maroto_FitlnCurrentPage_Call) RunAndReturn(run func(float64) bool) *Ma
 	return _c
 }
 
+// Fits provides a mock function with given fields: rows
+func (_m *Maroto) Fits(rows ...core.Row) bool {
+	_va := make([]interface{}, len(rows))
+	for _i := range rows {
+		_va[_i] = rows[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	if len(ret) == 0 {
+		panic("no return value specified for Fits")
+	}
+
+	var r0 bool
+	if rf, ok := ret.Get(0).(func(...core.Row) bool); ok {
+		r0 = rf(rows...)
+	} else {
+		r0 = ret.Get(0).(bool)
+	}
+
+	return r0
+}
+
+// Maroto_Fits_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'Fits'
+type Maroto_Fits_Call struct {
+	*mock.Call
+}
+
+// Fits is a helper method to define mock.On call
+//   - rows ...core.Row
+func (_e *Maroto_Expecter) Fits(rows ...interface{}) *Maroto_Fits_Call {
+	return &Maroto_Fits_Call{Call: _e.mock.On("Fits",
+		append([]interface{}{}, rows...)...)}
+}
+
+func (_c *Maroto_Fits_Call) Run(run func(rows ...core.Row)) *Maroto_Fits_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		variadicArgs := make([]core.Row, len(args)-0)
+		for i, a := range args[0:] {
+			if a != nil {
+				variadicArgs[i] = a.(core.Row)
+			}
+		}
+		run(variadicArgs...)
+	})
+	return _c
+}
+
+func (_c *Maroto_Fits_Call) Return(_a0 bool) *Maroto_Fits_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Maroto_Fits_Call) RunAndReturn(run func(...core.Row) bool) *Maroto_Fits_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// FitsNewPage provides a mock function with given fields: rows
+func (_m *Maroto) FitsNewPage(rows ...core.Row) bool {
+	_va := make([]interface{}, len(rows))
+	for _i := range rows {
+		_va[_i] = rows[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	if len(ret) == 0 {
+		panic("no return value specified for FitsNewPage")
+	}
+
+	var r0 bool
+	if rf, ok := ret.Get(0).(func(...core.Row) bool); ok {
+		r0 = rf(rows...)
+	} else {
+		r0 = ret.Get(0).(bool)
+	}
+
+	return r0
+}
+
+// Maroto_FitsNewPage_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'FitsNewPage'
+type Maroto_FitsNewPage_Call struct {
+	*mock.Call
+}
+
+// FitsNewPage is a helper method to define mock.On call
+//   - rows ...core.Row
+func (_e *Maroto_Expecter) FitsNewPage(rows ...interface{}) *Maroto_FitsNewPage_Call {
+	return &Maroto_FitsNewPage_Call{Call: _e.mock.On("FitsNewPage",
+		append([]interface{}{}, rows...)...)}
+}
+
+func (_c *Maroto_FitsNewPage_Call) Run(run func(rows ...core.Row)) *Maroto_FitsNewPage_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		variadicArgs := make([]core.Row, len(args)-0)
+		for i, a := range args[0:] {
+			if a != nil {
+				variadicArgs[i] = a.(core.Row)
+			}
+		}
+		run(variadicArgs...)
+	})
+	return _c
+}
+
+func (_c *Maroto_FitsNewPage_Call) Return(_a0 bool) *Maroto_FitsNewPage_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Maroto_FitsNewPage_Call) RunAndReturn(run func(...core.Row) bool) *Maroto_FitsNewPage_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
 // Generate provides a mock function with given fields:
 func (_m *Maroto) Generate() (core.Document, error) {
 	ret := _m.Called()
@@ -433,6 +551,65 @@ func (_c *Maroto_GetStructure_Call) Return(_a0 *node.Node[core.Structure]) *Maro
 }
 
 func (_c *Maroto_GetStructure_Call) RunAndReturn(run func() *node.Node[core.Structure]) *Maroto_GetStructure_Call {
+	_c.Call.Return(run)
+	return _c
+}
+
+// MeasureRows provides a mock function with given fields: rows
+func (_m *Maroto) MeasureRows(rows ...core.Row) float64 {
+	_va := make([]interface{}, len(rows))
+	for _i := range rows {
+		_va[_i] = rows[_i]
+	}
+	var _ca []interface{}
+	_ca = append(_ca, _va...)
+	ret := _m.Called(_ca...)
+
+	if len(ret) == 0 {
+		panic("no return value specified for MeasureRows")
+	}
+
+	var r0 float64
+	if rf, ok := ret.Get(0).(func(...core.Row) float64); ok {
+		r0 = rf(rows...)
+	} else {
+		r0 = ret.Get(0).(float64)
+	}
+
+	return r0
+}
+
+// Maroto_MeasureRows_Call is a *mock.Call that shadows Run/Return methods with type explicit version for method 'MeasureRows'
+type Maroto_MeasureRows_Call struct {
+	*mock.Call
+}
+
+// MeasureRows is a helper method to define mock.On call
+//   - rows ...core.Row
+func (_e *Maroto_Expecter) MeasureRows(rows ...interface{}) *Maroto_MeasureRows_Call {
+	return &Maroto_MeasureRows_Call{Call: _e.mock.On("MeasureRows",
+		append([]interface{}{}, rows...)...)}
+}
+
+func (_c *Maroto_MeasureRows_Call) Run(run func(rows ...core.Row)) *Maroto_MeasureRows_Call {
+	_c.Call.Run(func(args mock.Arguments) {
+		variadicArgs := make([]core.Row, len(args)-0)
+		for i, a := range args[0:] {
+			if a != nil {
+				variadicArgs[i] = a.(core.Row)
+			}
+		}
+		run(variadicArgs...)
+	})
+	return _c
+}
+
+func (_c *Maroto_MeasureRows_Call) Return(_a0 float64) *Maroto_MeasureRows_Call {
+	_c.Call.Return(_a0)
+	return _c
+}
+
+func (_c *Maroto_MeasureRows_Call) RunAndReturn(run func(...core.Row) float64) *Maroto_MeasureRows_Call {
 	_c.Call.Return(run)
 	return _c
 }

@@ -24,6 +24,11 @@ import (
 	"github.com/vanclief/maroto/v2/pkg/core"
 )
 
+// pageSlack keeps every page this many millimetres short of its full height. A page filled to the
+// exact height can trip gofpdf's automatic page break through float rounding, which inserts a
+// physical page and shifts every later page and page number.
+const pageSlack = 0.0001
+
 type Maroto struct {
 	config   *entity.Config
 	provider core.Provider
@@ -119,6 +124,24 @@ func (m *Maroto) FitlnCurrentPage(heightNewLine float64) bool {
 	return contentSize+heightNewLine < m.config.Dimensions.Height
 }
 
+// MeasureRows is responsible for returning the height the rows would take,
+// measured by the same provider that draws them. It adds nothing to the document.
+func (m *Maroto) MeasureRows(rows ...core.Row) float64 {
+	return m.getRowsHeight(rows...)
+}
+
+// Fits is responsible for validating whether the rows, added now, would all
+// stay on the current page. It replays the arithmetic AddRows uses.
+func (m *Maroto) Fits(rows ...core.Row) bool {
+	return m.fitsFrom(m.currentHeight, rows...)
+}
+
+// FitsNewPage is responsible for validating whether the rows would all fit
+// on a new page, below the header.
+func (m *Maroto) FitsNewPage(rows ...core.Row) bool {
+	return m.fitsFrom(m.headerHeight, rows...)
+}
+
 // RegisterHeader is responsible to define a set of rows as a header
 // of the document. The header will appear in every new page of the document.
 // The header cannot occupy an area greater than the useful area of the page,
@@ -208,7 +231,7 @@ func (m *Maroto) addRow(r core.Row) {
 	sumHeight := rowHeight + m.currentHeight + m.footerHeight
 
 	// Row smaller than the remain space on page
-	if sumHeight <= maxHeight {
+	if sumHeight <= maxHeight-pageSlack {
 		m.currentHeight += rowHeight
 		m.rows = append(m.rows, r)
 		return
@@ -236,7 +259,10 @@ func (m *Maroto) fillPageToAddNew() {
 	space := m.cell.Height - m.currentHeight - m.footerHeight
 
 	// Truncate space to 9 decimal places to avoid rounding errors
-	space = math.Floor(space*math.Pow10(9)) / math.Pow10(9)
+	space = math.Floor((space-pageSlack)*math.Pow10(9)) / math.Pow10(9)
+	if space < 0 {
+		space = 0
+	}
 
 	c := col.New(m.config.MaxGridSize)
 	spaceRow := row.New(space)
@@ -363,6 +389,19 @@ func (m *Maroto) processPage(pages []core.Page) ([]byte, error) {
 	}
 
 	return innerProvider.GenerateBytes()
+}
+
+func (m *Maroto) fitsFrom(currentHeight float64, rows ...core.Row) bool {
+	for _, r := range rows {
+		r.SetConfig(m.config)
+		rowHeight := r.GetHeight(m.provider, &m.cell)
+		if rowHeight+currentHeight+m.footerHeight > m.cell.Height-pageSlack {
+			return false
+		}
+		currentHeight += rowHeight
+	}
+
+	return true
 }
 
 func (m *Maroto) getRowsHeight(rows ...core.Row) float64 {

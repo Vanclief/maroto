@@ -71,7 +71,7 @@ func TestNew(t *testing.T) {
 }
 
 func TestMaroto_AddRow(t *testing.T) {
-	t.Run("When row height and available sapacing are equals, should add row in current page", func(t *testing.T) {
+	t.Run("when rows would fill the page exactly, should start a new page", func(t *testing.T) {
 		cfg := config.NewBuilder().
 			WithDimensions(20, 20).
 			WithBottomMargin(0).

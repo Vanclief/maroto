@@ -33,6 +33,21 @@ func (m *MetricsDecorator) FitlnCurrentPage(heightNewLine float64) bool {
 	return m.inner.FitlnCurrentPage(heightNewLine)
 }
 
+// MeasureRows decorates the MeasureRows method of maroto instance.
+func (m *MetricsDecorator) MeasureRows(rows ...core.Row) float64 {
+	return m.inner.MeasureRows(rows...)
+}
+
+// Fits decorates the Fits method of maroto instance.
+func (m *MetricsDecorator) Fits(rows ...core.Row) bool {
+	return m.inner.Fits(rows...)
+}
+
+// FitsNewPage decorates the FitsNewPage method of maroto instance.
+func (m *MetricsDecorator) FitsNewPage(rows ...core.Row) bool {
+	return m.inner.FitsNewPage(rows...)
+}
+
 // GetCurrentConfig decorates the GetCurrentConfig method of maroto instance.
 func (m *MetricsDecorator) GetCurrentConfig() *entity.Config {
 	return m.inner.GetCurrentConfig()
